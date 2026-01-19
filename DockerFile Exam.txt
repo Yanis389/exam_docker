@@ -1,0 +1,46 @@
+## Instructions
+
+Vous devrez, dans un seul conteneur Docker, mettre en place un serveur web.  
+Le conteneur devra tourner avec Debian Buster.
+
+### Requirements
+
+- Votre serveur devra être capable de faire tourner plusieurs services en même temps.  
+  Les services à installer incluent WordPress, phpMyAdmin, et MySQL. Vous devrez vous assurer que votre base de données SQL fonctionne correctement avec WordPress et phpMyAdmin.
+
+- Vous devez créer un utilisateur avec un nom d'utilisateur et un mot de passe, créer une base de données, et autoriser cet utilisateur à interagir avec la base de données.
+
+- Vous devrez vous assurer que, selon l’URL tapée, votre serveur redirige vers le bon site (index.php / phpMyAdmin / WordPress / (bonus) Nginx).
+
+- Vous devrez aussi vous assurer que votre serveur utilise un index automatique qui doit pouvoir être désactivé. (ENV)
+
+---
+
+### BONUS :
+
+- Créer un fichier de configuration Nginx :
+
+```nginx
+server {
+    listen 80 default_server;
+    server_name 127.0.0.1;
+    // Bonne chance xd
+}
+
+server {
+    listen 443 ssl;
+    server_name 127.0.0.1;
+
+    // Ajouter des charsets, des règles d'index, des limites de taille de corps, si nécessaire.
+
+    // Certificats SSL
+
+    // Logs et pages
+
+    // Root
+
+    // Locations (vraiment, bonne chance)
+}
+```
+
+- Votre serveur devra pouvoir, lorsque c’est possible, utiliser le protocole SSL (auto signed)
